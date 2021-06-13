@@ -125,15 +125,15 @@ public class MovieList {
         this.moderatorList = moderatorList;
     }
 
-    public void adminLogin(String adminId,String adminPassword){
-
+    public boolean adminLogin(String adminId,String adminPassword){
+        return true;
     }
 
-    public void userLogin(String userId,String userPassword){
-
+    public boolean userLogin(String userId,String userPassword){
+        return true;
     }
 
-    public void moderatorLogin(String moderatorId,String moderatorPassword){
-
+    public boolean moderatorLogin(String moderatorId,String moderatorPassword){
+        return true;
     }
 }
