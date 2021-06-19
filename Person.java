@@ -128,5 +128,12 @@ public abstract class Person {
 			return false;		
 		}
 	}
+	/**
+	 * hashCode implementation for Person class
+	 */
+	@Override
+	public int hashCode(){
+		return name.hashCode() + password.hashCode();
+	}
 	
 }
