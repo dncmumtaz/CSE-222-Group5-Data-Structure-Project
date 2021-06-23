@@ -1,5 +1,4 @@
-package proje;
-
+package termProject;
 
 public class Audience extends Person
 {
