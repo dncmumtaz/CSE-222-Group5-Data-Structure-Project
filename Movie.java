@@ -1,4 +1,4 @@
-package proje;
+package termProject;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ public class Movie {
 	private int userCount;
 	
 	/**
-	 * Audience için ekledim.
+	 * Audience iÃ§in ekledim.
 	 */
 	public Movie()
 	{
@@ -21,7 +21,7 @@ public class Movie {
 	}
 	
 	/**
-	 * Audience için ekledim.
+	 * Audience iÃ§in ekledim.
 	 */
 	public int getUserCount()
 	{
@@ -43,7 +43,7 @@ public class Movie {
 		return comments;
 	}
 	/**
-	 * Audience için ekledim.
+	 * Audience iÃ§in ekledim.
 	 */
 	public void listComments()
 	{
@@ -72,7 +72,7 @@ public class Movie {
 	
 }
 /**
- * Audience için ekledim
+ * Audience iÃ§in ekledim
  * @author ahmet
  *
  */
