@@ -1,4 +1,4 @@
-package proje;
+package termProject;
 
 public class Comment {
 	private String text;
@@ -11,7 +11,7 @@ public class Comment {
 	private String commentOwner;
 	
 	/**
-	 * Audience için ekledim.
+	 * Audience iÃ§in ekledim.
 	 */
 	public void report()
 	{
@@ -21,28 +21,28 @@ public class Comment {
 			System.out.println("This comment is already reported!");
 	}
 	/**
-	 * Audience için ekledim.
+	 * Audience iÃ§in ekledim.
 	 */
 	public void incrementLike()
 	{
 		numberOfLikes++;
 	}
 	/**
-	 * Audience için ekledim.
+	 * Audience iÃ§in ekledim.
 	 */
 	public void incrementDislike()
 	{
 		numberOfDislikes++;
 	}
 	/**
-	 * Audience için ekledim.
+	 * Audience iÃ§in ekledim.
 	 */
 	public int getNumberOfLikes()
 	{
 		return numberOfLikes;
 	}
 	/**
-	 * Audience için ekledim.
+	 * Audience iÃ§in ekledim.
 	 */
 	public int getNumberOfDislikes()
 	{
@@ -50,7 +50,7 @@ public class Comment {
 	}
 	@Override
 	/**
-	 * Audience için ekledim.
+	 * Audience iÃ§in ekledim.
 	 */
 	public String toString()
 	{
