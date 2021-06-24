@@ -61,7 +61,7 @@ public class Moderator extends Person{
                 return false;
             default:
                 System.out.println("Wrong Choice");
-                return false;
+                return true;
         }
 
     }
@@ -177,7 +177,7 @@ public class Moderator extends Person{
         int j;
         System.out.println("Enter Number of Inappropriate Comment");
         j=b.nextInt();
-        if(j<temp.size() && j>0){
+        if(j<=temp.size() && j>0){
             Movie c = searchMovie(a);
             c.removeComment(temp.get(j-1));
         }
