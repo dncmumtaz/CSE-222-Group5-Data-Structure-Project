@@ -23,7 +23,7 @@ public class Moderator extends Person{
                 System.out.println("Enter Number of Movie Which Is Suggested For Remove");
                 numberOfMovie=input.nextInt();
                 //call movie from movelist with index value
-                if(numberOfMovie>0 && numberOfMovie<temp.size()) {
+                if(numberOfMovie>0 && numberOfMovie<=temp.size()) {
                     Movie editted = temp.get(numberOfMovie - 1);
                     suggestRemovingMovie(editted);
                 }
@@ -36,7 +36,7 @@ public class Moderator extends Person{
                 System.out.println("Enter Number of Movie Which You Want to See Comments");
                 numberOfMovie=input.nextInt();
                 //call movie from movelist with index value
-                if(numberOfMovie>0 && numberOfMovie<temp.size()) {
+                if(numberOfMovie>0 && numberOfMovie<=temp.size()) {
                     Movie editted = temp.get(numberOfMovie - 1);
                     reviewComments(editted);
                 }
@@ -49,7 +49,7 @@ public class Moderator extends Person{
                 System.out.println("Enter Number of Movie Which You Want to Edit Information");
                 numberOfMovie=input.nextInt();
                 //call movie from movelist with index value
-                if(numberOfMovie>0 && numberOfMovie<temp.size()) {
+                if(numberOfMovie>0 && numberOfMovie<=temp.size()) {
                     Movie editted = temp.get(numberOfMovie - 1);
                     addInfoAboutMovie(editted);
                 }
@@ -135,7 +135,7 @@ public class Moderator extends Person{
      * */
     public Movie suggestRemovingMovie(Movie a){
         //if a is not null or if a is not in MovieList
-        if(a==null || searchMovie(a)!=null) {
+        if(a==null || searchMovie(a)==null) {
             System.out.println("That is Wrong");
             return null;
         }
