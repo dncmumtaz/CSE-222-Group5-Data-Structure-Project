@@ -117,6 +117,35 @@ public abstract class Person {
 		return (movie == null) ? null : movie.getComments();
 	}
 	/**
+	 * list the comments of given movie 
+	 * @param m movie whose comments are wanted
+	 * @return returns true if there are comments
+	 */
+	public boolean listComments(Movie movie) {
+		PriorityQueue<Comment> comments = movie.getComments();
+		
+		if(comments == null)
+			return false;
+		
+		Iterator<Comment> iter = comments.iterator();
+		StringBuilder s = new StringBuilder();
+		Comment tempComment;
+		int i = 1;
+		
+		while(iter.hasNext()) {
+			tempComment = iter.next();
+			s.append(i);
+			s.append(") ");
+			s.append(tempComment);
+			s.append("\n");
+			i++;
+			System.out.print(s.toString());
+			s.setLength(0);
+		}
+		
+		return true;
+	}
+	/**
 	 * unregisters the Person from the system
 	 * @return return the system which lost its member
 	 */ 
