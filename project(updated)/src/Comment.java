@@ -8,4 +8,13 @@ public class Comment {
 	private int numberOfLikes;
 	private int numberOfDislikes;
 	private boolean isReported = false;
+	
+	public void incrementLike()
+    {
+    	numberOfLikes++;
+    }
+    public void incrementDislike()
+    {
+    	numberOfDislikes++;
+    }
 }
