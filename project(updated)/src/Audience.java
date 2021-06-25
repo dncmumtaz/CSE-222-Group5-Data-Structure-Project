@@ -77,12 +77,12 @@ public class Audience extends Person {
     	else if(choice == 4) {
     		System.out.println("Enter your comment to add to selected movie.");
     		String commentText = sc.nextLine();
-    		Comment comment = new Comment(commentText, 0, 0, false);
+    		Comment comment = new Comment(commentText);
     		addComment(selectedMovie, comment);
     	}
     	else if(choice == 5) {
     		listComments(selectedMovie);
-    		Comment selectedComment;
+    		Comment selectedComment = null;
     		int commentIndex = sc.nextInt();
         	
         	if(commentIndex <= 0 && commentIndex > selectedMovie.getComments().size()) { // comment sayısını tutan bir değişken atanabilir.
@@ -129,9 +129,9 @@ public class Audience extends Person {
 	}
 	public void reactToMovie(Movie movie, Mood reaction) {
 		
-		if(tempMovie.addReaction(reaction))
+		//if(tempMovie.addReaction(reaction))
 			System.out.println("Your reaction has added to movie.");
-		else
+		//else
 			System.out.println("This reaction exists at the movie.");
 	}
 	public void addComment(Movie movie, Comment comment) {
