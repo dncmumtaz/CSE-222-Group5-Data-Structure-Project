@@ -26,10 +26,10 @@ public class Audience extends Person {
         	System.out.println("Please select a movie");
         	int movieIndex = sc.nextInt();
         	
-        	if(movieIndex <= 0 && movieIndex > MovieList.getMovieList().size()) // film sayýsýný tutan bir deðiþken atanabilir.
+        	if(movieIndex <= 0 && movieIndex > MovieList.getMovieList().size()) 
         		System.out.println("There isn't any movie with this index!");
         	else {
-        		selectedMovie = MovieList.getMovieList().get(movieIndex); // getMoviede iteratorle index kadar dolaþýlýp film döndürülebilir.
+        		selectedMovie = MovieList.getMovieList().get(movieIndex); // getMoviede iteratorle index kadar dolasip film dÃ¶ndÃ¼rÃ¼lebilir.
         	}
         }
         else if(choice == 2) {
@@ -73,7 +73,7 @@ public class Audience extends Person {
     	else if(choice == 3) {
     		System.out.println("Type your mood for the movie");
     		//Mood mood = new Mood();
-    		//Sýkýntý var.
+    		//Problem var
     	}
     	else if(choice == 4) {
     		System.out.println("Enter your comment to add to selected movie.");
@@ -85,10 +85,10 @@ public class Audience extends Person {
     		listComments(selectedMovie);
     		int commentIndex = sc.nextInt();
         	
-        	if(commentIndex <= 0 && commentIndex > selectedMovie.getComments().size())) // comment sayýsýný tutan bir deðiþken atanabilir.
+        	if(commentIndex <= 0 && commentIndex > selectedMovie.getComments().size()))
         		System.out.println("There isn't any comments with this index!");
         	else {
-        		Comment selectedComment = selectedMovie.getComment(commentIndex); // getComment iteratorle index kadar dolaþýlýp comment döndürülebilir.
+        		Comment selectedComment = selectedMovie.getComment(commentIndex); // getComment iteratorle index kadar dolasip comment dÃ¶ndÃ¼rÃ¼lebilir.
         	}
     		
         	if(selectedComment != null)
@@ -145,7 +145,9 @@ public class Audience extends Person {
 		
 		oldScore = oldScore * userCount;
 		oldScore += score;
+		
 		userCount++;
+		movie.setUserCount(userCount);
 		movie.setMetascore(oldScore / userCount);
 		// returns the average grade of the movie
 		return movie.getMetascore();
