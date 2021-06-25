@@ -19,7 +19,7 @@ public class Audience extends Person {
 		
 		int choice = sc.nextInt();
 		String movieName;
-		Movie selectedMovie;
+		Movie selectedMovie = null;
 		
         if(choice == 1) {
         	checkListOfMovies();
