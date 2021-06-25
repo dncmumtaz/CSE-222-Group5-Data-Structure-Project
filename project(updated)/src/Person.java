@@ -87,17 +87,16 @@ public abstract class Person {
 	 * @param m searched movie
 	 * @return found movie , if the movie does not exist, returns null;
 	 */
-	public Movie searchMovie(Movie m) {
-		Iterator<Movie> iter= MovieList.getMovieList().iterator();
+	public Movie searchMovie(String movieName) {
+		Iterator<Movie> iter = MovieList.getMovieList().iterator();
 		Movie movie;
 		while(iter.hasNext()) {
 			movie = iter.next();
-			if(movie.equals(m)) {
+			if(movie.getTitle().equals(movieName)) {
 				return movie;
 			}
 		}
 		return null;
-		
 	}
 	/**
 	 * returns the information about movie if the given movie belongs to the system
