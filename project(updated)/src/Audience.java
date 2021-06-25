@@ -49,8 +49,7 @@ public class Audience extends Person {
         
         return true;
 	}
-	private boolean movieMenu(Movie selectedMovie)
-	{
+	private boolean movieMenu(Movie selectedMovie) {
 		int choice; 
 		Scanner sc = new Scanner(System.in);
 		
@@ -123,17 +122,14 @@ public class Audience extends Person {
     	else
     		System.out.println("Invalid input please try again!");
 	}
-	public void reactToMovie(Movie movie, Mood reaction) 
-	{
-		Movie tempMovie = searchMovie(movie);
+	public void reactToMovie(Movie movie, Mood reaction) {
 		
 		if(tempMovie.addReaction(reaction))
 			System.out.println("Your reaction has added to movie.");
 		else
 			System.out.println("This reaction exists at the movie.");
 	}
-	public void addComment(Movie movie, Comment comment) 
-	{
+	public void addComment(Movie movie, Comment comment) {
 		if(comment != null && movie != null)
 			movie.addComment(comment);
 		
