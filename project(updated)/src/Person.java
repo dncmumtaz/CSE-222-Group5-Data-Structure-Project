@@ -158,8 +158,8 @@ public abstract class Person {
 		}else if(this instanceof Moderator) {
 			flag = MovieList.getModeratorList().remove(this);
 		} else { // person is user
-			flag = MovieList.getUserList().remove(this);
-			for(User u : MovieList.getUserList()){
+			flag = MovieList.getAudienceList().remove(this);
+			for(Audience u : MovieList.getAudienceList()){
 				System.out.println(u);
 			}
 			System.out.println("SILINMIS ::::: "+this);
