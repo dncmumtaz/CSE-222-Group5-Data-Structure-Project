@@ -5,6 +5,7 @@ public class Movie {
     String line,Title,Certificate,Duration,Genre,Rate,Description,Cast,Info;
     Double MetaScore;
     int userCount; // filmi oylayanların sayısı
+    PriorityQueue<Comment> comments;
     
     public Movie(String line, String title, String certificate, String duration, String genre, String rate, String metascore, String description, String cast, String info) {
         this.line = line;
@@ -18,6 +19,7 @@ public class Movie {
         Cast = cast;
         Info = info;
         userCount = 0;
+        comments = new PriorityQueue<Comment>();
     }
 
     public String getLine() {
@@ -121,6 +123,10 @@ public class Movie {
                 "," + Info;
     }
     public PriorityQueue<Comment> getComments(){
-        return null; // it should return comments
+    	return comments;
+    }
+    public void addComment(Comment comment)
+    {
+    	comments.add(comment);
     }
 }
