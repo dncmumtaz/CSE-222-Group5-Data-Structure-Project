@@ -1,8 +1,11 @@
 package project;
+
 import java.util.PriorityQueue;
 public class Movie {
-    String line,Title,Certificate,Duration,Genre,Rate,Metascore,Description,Cast,Info;
-
+    String line,Title,Certificate,Duration,Genre,Rate,Description,Cast,Info;
+    Double MetaScore;
+    int userCount; // filmi oylayanların sayısı
+    
     public Movie(String line, String title, String certificate, String duration, String genre, String rate, String metascore, String description, String cast, String info) {
         this.line = line;
         Title = title;
@@ -10,10 +13,11 @@ public class Movie {
         Duration = duration;
         Genre = genre;
         Rate = rate;
-        Metascore = metascore;
+        MetaScore = Double.parseDouble(metascore);
         Description = description;
         Cast = cast;
         Info = info;
+        userCount = 0;
     }
 
     public String getLine() {
@@ -64,12 +68,12 @@ public class Movie {
         Rate = rate;
     }
 
-    public String getMetascore() {
-        return Metascore;
+    public double getMetascore() {
+        return MetaScore;
     }
 
-    public void setMetascore(String metascore) {
-        Metascore = metascore;
+    public void setMetascore(Double metascore) {
+        MetaScore = metascore;
     }
 
     public String getDescription() {
@@ -96,6 +100,12 @@ public class Movie {
         Info = info;
     }
 
+    public void setUserCount(int userCount) {
+    	this.userCount = userCount;
+    }
+    public int getUserCount() {
+    	return userCount;
+    }
     @Override
     public String toString() {
         return "Movie{" +
@@ -105,7 +115,7 @@ public class Movie {
                 "," + Duration +
                 "," + Genre +
                 "," + Rate +
-                "," + Metascore +
+                "," + MetaScore +
                 "," + Description +
                 "," + Cast +
                 "," + Info;
