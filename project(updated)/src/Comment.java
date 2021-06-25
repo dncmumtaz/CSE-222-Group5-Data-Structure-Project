@@ -10,11 +10,18 @@ public class Comment {
 	private boolean isReported = false;
 	
 	public void incrementLike()
-    {
-    	numberOfLikes++;
-    }
-    public void incrementDislike()
-    {
-    	numberOfDislikes++;
-    }
+    	{
+    		numberOfLikes++;
+    	}
+    	public void incrementDislike()
+    	{
+    		numberOfDislikes++;
+    	}
+	public boolean isReported() {
+        	return isReported;
+    	}
+
+    	public void setReported(boolean reported) {
+        	isReported = reported;
+	}
 }
