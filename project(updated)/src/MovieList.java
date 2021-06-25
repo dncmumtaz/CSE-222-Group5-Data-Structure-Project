@@ -10,13 +10,13 @@ import java.util.Iterator;
  */
 public class MovieList {
     ArrayList<Movie> movieList=new ArrayList<Movie>();
-    HashSet<User> userList=new HashSet<User>(); //Hashtable olacak
+    HashSet<Audience> audienceList = new HashSet<Audience>(); //Hashtable olacak
     HashSet<Admin> adminList=new HashSet<Admin>(); //Hashtable olacak
     HashSet<Moderator> moderatorList=new HashSet<Moderator>(); //Hashtable olacak
     String movieFileName;
     private static final String adminFile = "Admins.txt";
     private static final String modFile = "Moderators.txt";
-    private static final String userFile = "Users.txt";
+    private static final String userFile = "Audience.txt";
     Scanner input=new Scanner(System.in);
     /**
      * takes movies from file
@@ -83,7 +83,7 @@ public class MovieList {
     /**
      * registers user to the system if he/she have not yet
      */
-    private void registerUser(){
+    private void registerAudience(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter your name: ");
         String name = sc.nextLine();
@@ -102,11 +102,11 @@ public class MovieList {
                 System.out.println("All spaces are replaced with '.'");
                 System.out.println("Your new name is : "+pw);
             }
-            User user = new User(name,pw); 
-            user.setMovieList(this);
+            Audience audience = new Audience(name,pw); 
+            audience.setMovieList(this);
             //if(!userList.contains(user)){
         
-            userList.add(user);
+            audienceList.add(audience);
             try{
                 FileWriter fw = new FileWriter(new File(userFile),true); // append to the end of file
                 fw.append(name);
@@ -128,8 +128,8 @@ public class MovieList {
      */
     private boolean nameTaken(String name){
         //Iterator<User> iter = userList.iterator();
-        for(User user : userList){
-            if(name.equals(user.getName())){
+        for(Audience audience : audienceList){
+            if(name.equals(audience.getName())){
                 return true;
             }
         }
@@ -146,7 +146,7 @@ public class MovieList {
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
         if(choice == 1){
-            registerUser();
+            registerAudience();
         } else if(choice == 2){
             System.out.println("1) Login as Admin");
             System.out.println("2) Login as Moderator");
@@ -210,10 +210,10 @@ public class MovieList {
                 }
             }
         } else {
-            User user = new User(name,pw);
-            if(userList.contains(user)){
-                for(User obj : userList){
-                    if(obj.equals(user)){
+            Audience audience = new Audience(name,pw);
+            if(audienceList.contains(audience)){
+                for(Audience obj : audienceList){
+                    if(obj.equals(audience)){
                         return obj;
                     }
                 }
@@ -257,9 +257,9 @@ public class MovieList {
                 String data = myReader.nextLine();
                 String[] namePass = data.split(" ");
                 //System.out.println("-"+data+"-");
-                User added = new User(namePass[0],namePass[1]);
+                Audience added = new Audience(namePass[0],namePass[1]);
                 added.setMovieList(this);
-                userList.add(added);
+                audienceList.add(added);
                 
             }
             myReader.close();
@@ -290,7 +290,7 @@ public class MovieList {
     }
     void updateUsers(Person p){
         String file = null;
-        if(p instanceof User){
+        if(p instanceof Audience){
             file = userFile;
         } else if(p instanceof Moderator){
             file = modFile;    
@@ -302,7 +302,7 @@ public class MovieList {
     private void savePeople(String file){
         try{
             if(file.equals(userFile)){
-                Iterator<User> iter = userList.iterator();
+                Iterator<Audience> iter = audienceList.iterator();
                 FileWriter fw = new FileWriter(new File(userFile));
                 while(iter.hasNext()){
                     fw.append(iter.next().toString());
@@ -378,14 +378,14 @@ public class MovieList {
         this.movieList = movieList;
     }
 
-    public HashSet<User> getUserList() {
-        return userList;
+    public HashSet<Audience> getAudienceList() {
+        return audienceList;
     }
 
 
 
-    public void setUserList(HashSet<User> userList) {
-        this.userList = userList;
+    public void setUserList(HashSet<Audience> audienceList) {
+        this.audienceList = audienceList;
     }
 
     public HashSet<Admin> getAdminList() {
