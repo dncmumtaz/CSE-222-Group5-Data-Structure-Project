@@ -121,6 +121,8 @@ public class Audience extends Person {
     		return false;
     	else
     		System.out.println("Invalid input please try again!");
+		
+		return true;
 	}
 	public void reactToMovie(Movie movie, Mood reaction) {
 		
