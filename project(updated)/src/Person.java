@@ -87,6 +87,16 @@ public abstract class Person {
 	 * @param m searched movie
 	 * @return found movie , if the movie does not exist, returns null;
 	 */
+	public Movie searchMovie(Movie movie){
+		if(movie == null)
+			return null;
+		return searchMovie(movie.getTitle());
+	}
+	/**
+	 * returns null if the given movie does not exist. Otherwise returns the original movie to be able to make changes on it.
+	 * @param m searched movie's title
+	 * @return found movie , if the movie does not exist, returns null;
+	 */
 	public Movie searchMovie(String movieName) {
 		Iterator<Movie> iter = MovieList.getMovieList().iterator();
 		Movie movie;
@@ -104,7 +114,8 @@ public abstract class Person {
 	 * @return returns the information about movie if the given movie belongs to the system
 	 */
 	public Movie getMovieInformation(Movie m) {
-		return searchMovie(m);
+		//return searchMovie(m);
+		return (m == null) ? null : searchMovie(m.getTitle());
 	}
 	/**
 	 * returns the comments of given movie 
@@ -112,7 +123,8 @@ public abstract class Person {
 	 * @return returns the comments of given movie
 	 */
 	public PriorityQueue<Comment> seeComments(Movie m){
-		Movie movie = searchMovie(m);
+		if(m == null) return null;
+		Movie movie = searchMovie(m.getTitle());
 		return (movie == null) ? null : movie.getComments();
 	}
 	/**
