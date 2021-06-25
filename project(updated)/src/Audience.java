@@ -82,12 +82,15 @@ public class Audience extends Person {
     	}
     	else if(choice == 5) {
     		listComments(selectedMovie);
+    		Comment selectedComment;
     		int commentIndex = sc.nextInt();
         	
-        	if(commentIndex <= 0 && commentIndex > selectedMovie.getComments().size()))
+        	if(commentIndex <= 0 && commentIndex > selectedMovie.getComments().size()) { // comment sayısını tutan bir değişken atanabilir.
         		System.out.println("There isn't any comments with this index!");
+        		selectedComment = null;
+        	}
         	else {
-        		Comment selectedComment = selectedMovie.getComment(commentIndex); // getComment iteratorle index kadar dolasip comment döndürülebilir.
+        		selectedComment = selectedMovie.getComment(commentIndex); // getComment iteratorle index kadar dolaşılıp comment döndürülebilir.
         	}
     		
         	if(selectedComment != null)
